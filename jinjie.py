@@ -1,5 +1,5 @@
-#-*-coding:utf-8-*-
-#2-3
+# -*-coding:utf-8-*-
+# 2-3
 # import math
 # def add(x,y,f):
 #     return f(x)+f(y)
@@ -54,13 +54,51 @@
 # print c1(), c2(), c1(), c2()
 
 
-#2-8
-def calc_prod(lst):
-    def lazy_prod(x,y):
-        return x*y
-    def prod():
-        return reduce(lazy_prod,lst)
-    return prod
+# # 2-8
+# def calc_prod(lst):
+#     def lazy_prod(x, y):
+#         return x * y
+#
+#     def prod():
+#         return reduce(lazy_prod, lst)
+#
+#     return prod
+#
+#
+# f = calc_prod([1, 2, 3, 4])
+# print f()
+#
 
-f = calc_prod([1, 2, 3, 4])
-print f()
+# #2-1
+# def count():
+#     fs = []
+#     for i in range(1, 4):
+#         def f():
+#              return i*i
+#         fs.append(f)
+#     return fs
+#
+# f1, f2, f3 = count()
+# print f1()
+
+# def count():
+#     fs = []
+#     for i in range(1, 4):
+#         def f(j):
+#             def g():
+#                 return j*j
+#             return g
+#         r=f(i)
+#         fs.append(r)
+#     return fs
+#
+# f1, f2, f3 = count()
+# print f1(), f2(), f3()
+#
+# print(cmp(2,1))
+
+#2-10匿名函数
+def is_not_empty(s):
+    return s and len(s.strip()) > 0
+
+print filter(lambda x:x and len(x.strip())>0, ['test', None, '', 'str', '  ', 'END'])
