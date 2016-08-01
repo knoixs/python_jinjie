@@ -97,8 +97,60 @@
 #
 # print(cmp(2,1))
 
-#2-10匿名函数
-def is_not_empty(s):
-    return s and len(s.strip()) > 0
+# #2-10匿名函数
+# def is_not_empty(s):
+#     return s and len(s.strip()) > 0
+#
+# print filter(lambda x:x and len(x.strip())>0, ['test', None, '', 'str', '  ', 'END'])
 
-print filter(lambda x:x and len(x.strip())>0, ['test', None, '', 'str', '  ', 'END'])
+
+# def deco(func):
+#     print("before myfunc() called.")
+#     func()
+#     print("  after myfunc() called.")
+#     return func
+#
+#
+# def myfunc():
+#     print(" myfunc() called.")
+#
+#
+# myfunc = deco(myfunc)
+#
+# myfunc()
+# myfunc()
+
+
+# from Tkinter import *
+#
+# class Application(Frame):
+#     def __init__(self, master=None):
+#         Frame.__init__(self, master)
+#         self.pack()
+#         self.createWidgets()
+#
+#     def createWidgets(self):
+#         self.helloLabel = Label(self, text='Hello, world!')
+#         self.helloLabel.pack()
+#         self.quitButton = Button(self, text='Quit', command=self.quit)
+#         self.quitButton.pack()
+#
+# app = Application()
+# # 设置窗口标题:
+# app.master.title('Hello World')
+# # 主消息循环:
+# app.mainloop()
+
+
+#2-12
+# def log(f):
+#     def fn(x):
+#         print 'call'+f.__name__+'()..'
+#         return f(x)
+#     return fn
+#
+# @log
+# def factorial(n):
+#     return reduce(lambda x,y: x*y, range(1, n+1))
+# print factorial(10)
+
