@@ -168,3 +168,54 @@
 # def factorial(n):
 #     return reduce(lambda x,y:x*y,range(1,n+1))
 # print factorial(10)
+
+
+##2-13
+# def log(prefix):
+#     def log_decorator(f):
+#         def wrapper(*args,**kwargs):
+#             print '[%s] %s()...'%(prefix,f.__name__)
+#             return f(*args,**kwargs)
+#         return wrapper
+#     return log_decorator
+# @log('DEBUG')
+# def test():
+#     pass
+# print test()
+
+
+# import time
+#
+# def performance(unit):
+#     def perf_decorator(f):
+#         def wrapper(*args, **kw):
+#             t1 = time.time()
+#             r = f(*args, **kw)
+#             t2 = time.time()
+#             t = (t2 - t1)*1000 if unit =='ms' else (t2 - t1)
+#             print 'call %s() in %f %s'%(f.__name__, t, unit)
+#             return r
+#         return wrapper
+#     return perf_decorator
+#
+# @performance('ms')
+# def factorial(n):
+#     return reduce(lambda x,y: x*y, range(1, n+1))
+#
+# print factorial(10)
+
+
+#插入排序
+def insert_sort(lists):
+    count=len(lists)
+    for i in range(1,count):
+        key = lists[i]
+        j = i-1
+        while j>=0:
+            if lists[j]>key:
+                lists[j+1] = lists[j]
+                lists[j]=key
+            j -=1
+    return lists
+
+print insert_sort([1,3,3,2,6])
